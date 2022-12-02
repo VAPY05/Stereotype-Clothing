@@ -1,0 +1,24 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <h1>Register</h1>
+      </div>
+  
+      <!-- Register Form -->
+      <form [formGroup]="singUpForm" (ngSubmit)="singUp()">
+        <input formControlName="username" type="text" id="username" class="fadeIn second" name="register" placeholder="username">
+        <input formControlName="password" type="password" id="password" class="fadeIn third" name="register" placeholder="password">
+        <input formControlName="repeat" type="password" id="repeatPass" class="fadeIn third" name="register" placeholder="repeat password">
+        <input type="submit" class="fadeIn fourth" value="Register">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/login">Already registered?</a>
+      </div>
+  
+    </div>
+  </div>
