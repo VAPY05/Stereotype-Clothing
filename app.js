@@ -16,6 +16,8 @@ const start = async () => {
 
     const app = express();
 
+    app.use(express.static('public'))
+    app.use(express.urlencoded({extended: false}))
     app.use(routes)
 
     app.engine("hbs",hbs.engine({
@@ -24,7 +26,7 @@ const start = async () => {
 
     app.set("view engine","hbs")
 
-    app.listen("5000",()=>{console.log("The App Is Running On Port 5000...")})
+    app.listen("5000",()=>{console.log("Server is listening On port 5000...")})
 }
 
 start();
