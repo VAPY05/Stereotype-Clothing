@@ -8,16 +8,16 @@
       </div>
   
       <!-- Register Form -->
-      <form [formGroup]="singUpForm" (ngSubmit)="singUp()">
-        <input formControlName="username" type="text" id="username" class="fadeIn second" name="register" placeholder="username">
-        <input formControlName="password" type="password" id="password" class="fadeIn third" name="register" placeholder="password">
-        <input formControlName="repeat" type="password" id="repeatPass" class="fadeIn third" name="register" placeholder="repeat password">
+      <form method="post">
+        <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+        <input type="password" id="repeatPass" class="fadeIn third" name="repeatPassword" placeholder="repeat password">
         <input type="submit" class="fadeIn fourth" value="Register">
       </form>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" routerLink="/login">Already registered?</a>
+        <a class="underlineHover" href="/profile/login">Already registered?</a>
       </div>
   
     </div>
