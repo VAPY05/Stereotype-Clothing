@@ -311,3 +311,14 @@ input[type=password]:placeholder {
 .profile-container{
   margin-bottom: -105px;
 }
+
+.item-img{
+  width: 750px;
+  height: 500px;
+}
+
+.actions{
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
