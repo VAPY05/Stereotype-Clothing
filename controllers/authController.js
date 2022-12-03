@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const path = require("path")
 
 router.get("/profile",(req,res)=>{
     res.render("profile")
