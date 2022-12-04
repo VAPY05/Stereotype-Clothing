@@ -29,6 +29,11 @@ router.get("/profile/register",isAuth,(req,res)=>{
     res.render("register")
 })
 
+router.get("/profile/logout",isGuest,(req,res)=>{
+    res.clearCookie("user");
+    res.redirect("/")
+})
+
 router.post("/profile/register",isAuth,(req,res)=>{
     const {username, password, repeatPassword} = req.body
     res.send(`Username: ${username}, Password: ${password}, Repeated Password: ${repeatPassword}`)

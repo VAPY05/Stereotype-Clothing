@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #ffffff;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -321,4 +321,8 @@ input[type=password]:placeholder {
   display: flex;
   gap: 10px;
   list-style: none;
+}
+
+.text-button{
+  text-decoration:none
 }
