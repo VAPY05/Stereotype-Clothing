@@ -1,23 +1,34 @@
+const { login } = require("../services/authService");
+
+const {auth, isGuest, isAuth} = require("../middlewares/authMiddleware")
+
 const router = require("express").Router();
 
-router.get("/profile",(req,res)=>{
-    res.render("profile")
+router.get("/profile",auth,isGuest,(req,res)=>{
+    res.render("profile",{username: res.locals.user.username})
 })
 
-router.get("/profile/login",(req,res)=>{
+router.get("/profile/login",isAuth,(req,res)=>{
     res.render("login")
 })
 
-router.post("/profile/login",(req,res)=>{
+router.post("/profile/login",isAuth,async(req,res)=>{
     const {username, password} = req.body
-    res.send(`Username: ${username}, Password: ${password}`)
+    const obj = {username, password};
+    const token = await login(obj)
+    if(token){
+        res.cookie("user",token)
+        res.redirect("/")
+    }else{
+        res.redirect("404")
+    }
 })
 
-router.get("/profile/register",(req,res)=>{
+router.get("/profile/register",isAuth,(req,res)=>{
     res.render("register")
 })
 
-router.post("/profile/register",(req,res)=>{
+router.post("/profile/register",isAuth,(req,res)=>{
     const {username, password, repeatPassword} = req.body
     res.send(`Username: ${username}, Password: ${password}, Repeated Password: ${repeatPassword}`)
 })
