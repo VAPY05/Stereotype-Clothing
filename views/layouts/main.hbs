@@ -32,16 +32,16 @@
                 <li>
                     <a class="nav-link" href="/products">Products</a>
                 </li>
-                {{#if res.locals.user}}
+                {{#if user}}
+                    <li>
+                        <a class="nav-link" href="/profile">Profile</a>
+                    </li>
+                {{else}}
                     <li>
                         <a class="nav-link" href="/profile/login">Login</a>
                     </li>
                     <li>
                         <a class="nav-link" href="/profile/register">Register</a>
-                    </li>
-                {{else}}
-                    <li>
-                        <a class="nav-link" href="/profile">Profile</a>
                     </li>
                 {{/if}}
 

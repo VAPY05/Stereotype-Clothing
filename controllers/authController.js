@@ -4,7 +4,8 @@ const {auth, isGuest, isAuth} = require("../middlewares/authMiddleware")
 
 const router = require("express").Router();
 
-router.get("/profile",auth,isGuest,(req,res)=>{
+router.get("/profile",isGuest,(req,res)=>{
+    console.log(res.locals)
     res.render("profile",{username: res.locals.user.username})
 })
 
