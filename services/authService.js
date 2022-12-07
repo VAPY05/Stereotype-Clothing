@@ -5,14 +5,18 @@ const {secretKey} = require('../config/env')
 const bcrypt = require('bcrypt')
 
 exports.registerProfile = async(userData) =>{
-    let password = userData.password;
-    let hashedPassword = await bcrypt.hash(password,10)
+    let hashedPassword = await bcrypt.hash(userData.password,10)
     userData.password = hashedPassword
+    let username = userData.username
+    const isProfileExisting = await User.findOne({username})
+    if(isProfileExisting){
+        return false
+    }
     const profile = new User();
     profile.username = userData.username;
     profile.password = userData.password;
     profile.save();
-    const isValid = await bcrypt.compare(userData.repeatPass, profile.password)
+    const isValid = await bcrypt.compare(userData.repeatPassword, profile.password)
     return isValid
 }
 

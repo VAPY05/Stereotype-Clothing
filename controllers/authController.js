@@ -1,4 +1,4 @@
-const { login } = require("../services/authService");
+const { login, registerProfile } = require("../services/authService");
 
 const {auth, isGuest, isAuth} = require("../middlewares/authMiddleware")
 
@@ -29,14 +29,25 @@ router.get("/profile/register",isAuth,(req,res)=>{
     res.render("register")
 })
 
+router.post("/profile/register",isAuth,async(req,res)=>{
+    const {username, password, repeatPassword} = req.body
+    if(password != repeatPassword){
+        res.redirect("/404")
+    }
+    const obj = {username, password, repeatPassword};
+    const token = await registerProfile(obj)
+    if(token){
+        res.cookie("user",token)
+        res.redirect("/")
+    }else{
+        res.redirect("/404")
+    }
+})
+
 router.get("/profile/logout",isGuest,(req,res)=>{
     res.clearCookie("user");
     res.redirect("/")
 })
 
-router.post("/profile/register",isAuth,(req,res)=>{
-    const {username, password, repeatPassword} = req.body
-    res.send(`Username: ${username}, Password: ${password}, Repeated Password: ${repeatPassword}`)
-})
 
 module.exports = router
