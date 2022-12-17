@@ -2,19 +2,19 @@
 <div class="container details">
 
     <!-- Portfolio Item Heading -->
-    <h1 class="my-4">TITLE
+    <h1 class="my-4">{{item.name}}
     </h1>
   
     <!-- Portfolio Item Row -->
     <div class="row">
   
       <div class="col-md-8">
-        <img class="img-fluid item-img" src="https://img.eobuwie.cloud/eob_product_1800w_1800h(b/7/c/d/b7cd8cadbd90bc2eaeee23b30cfd8d2a242db4fe_0000206766960_01_pa.jpg,webp)/obuvki-adidas-galaxy-5-fw5717-core-black-cloud-white-cloud-white.webps" alt="">
+        <img class="img-fluid item-img" src={{item.img}} alt="">
       </div>
   
       <div class="col-md-4">
-        <h3 class="my-3">Product Description</h3>
-        <p>DESCRIPTION</p>
+        <h3 class="my-3">Description</h3>
+        <p>{{item.description}}</p>
         <h3 class="my-3">Product Actions</h3>
         <ul class="actions">
           <li><button class="btn btn-primary">Like/Liked</button></li>
