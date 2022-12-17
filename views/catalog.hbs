@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <div class="card" style="width: 18rem;">
+      {{#each data}}
+        <div class="card" style="width: 18rem;">
         <img
-          src="https://img.eobuwie.cloud/eob_product_1800w_1800h(b/7/c/d/b7cd8cadbd90bc2eaeee23b30cfd8d2a242db4fe_0000206766960_01_pa.jpg,webp)/obuvki-adidas-galaxy-5-fw5717-core-black-cloud-white-cloud-white.webp"
+          src={{{img}}}
           class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Title</h5>
-          <p class="card-text">Description</p>
-          <a href="/products/123/details" class="btn btn-primary">Details</a>
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{description}}</p>
+          <a href=/products/{{_id}}/details class="btn btn-primary">Details</a>
         </div>
       </div>
+      {{/each}}
     </div>
   </div>
 </div>
