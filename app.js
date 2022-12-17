@@ -4,6 +4,11 @@ const hbs = require("express-handlebars")
 const mongoose = require("mongoose");
 const routes = require("./routes");
 
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+
+
+
 const {auth} = require("./middlewares/authMiddleware")
 
 const start = async () => {
@@ -21,10 +26,12 @@ const start = async () => {
     app.use(express.static('public'))
     app.use(express.urlencoded({extended: false}))
     app.use(cookieParser())
+    app.use(express.json());
     app.use(auth)
     app.use(routes)
 
     app.engine("hbs",hbs.engine({
+        handlebars: allowInsecurePrototypeAccess(Handlebars),
         extname: 'hbs'
     }))
 
