@@ -7,10 +7,6 @@ const routes = require("./routes");
 const Handlebars = require('handlebars')
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
-
-
-const {auth} = require("./middlewares/authMiddleware")
-
 const start = async () => {
     try{
         const db = await mongoose.connect("mongodb+srv://ProjectAngular:ZlFGuUtnZ5Sp9jDb@cluster0.f6sfuwx.mongodb.net/?retryWrites=true&w=majority");
