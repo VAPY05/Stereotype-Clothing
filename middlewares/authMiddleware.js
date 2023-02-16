@@ -15,7 +15,7 @@ exports.auth = async(req,res,next) => {
 }
 
 
-exports.isAuth = async(req,res,next) => {
+/* exports.isAuth = async(req,res,next) => {
     if(req.cookies["user"]) {
         return res.redirect('/')
     }
@@ -27,4 +27,4 @@ exports.isGuest = async(req,res,next) => {
         return res.redirect('/profile/login')
     }
     next();
-}
+} */

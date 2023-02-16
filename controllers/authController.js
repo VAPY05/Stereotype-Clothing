@@ -4,7 +4,7 @@ const {auth, isGuest, isAuth} = require("../middlewares/authMiddleware")
 
 const router = require("express").Router();
 
-router.get("/profile",isGuest,(req,res)=>{
+/* router.get("/profile",isGuest,(req,res)=>{
     console.log(res.locals)
     res.render("profile",{username: res.locals.user.username})
 })
@@ -23,9 +23,9 @@ router.post("/profile/login",isAuth,async(req,res)=>{
     }else{
         res.redirect("404")
     }
-})
+}) */
 
-router.get("/profile/register",isAuth,(req,res)=>{
+/* router.get("/profile/register",isAuth,(req,res)=>{
     res.render("register")
 })
 
@@ -47,7 +47,7 @@ router.post("/profile/register",isAuth,async(req,res)=>{
 router.get("/profile/logout",isGuest,(req,res)=>{
     res.clearCookie("user");
     res.redirect("/")
-})
+}) */
 
 
 module.exports = router
