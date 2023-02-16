@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container-items">
   <div class="row">
     <div class="col-sm">
       {{#each data}}
-        <div class="card" style="width: 18rem;">
+        <div class="col-md-4 card" style="width: 18rem;">
         <img
           src={{{img}}}
           class="card-img-top" alt="...">
@@ -12,6 +12,29 @@
           <a href=/products/{{_id}}/details class="btn btn-primary">Поръчай</a>
         </div>
       </div>
+
+      <div class="col-md-4 card" style="width: 18rem;">
+        <img
+          src={{{img}}}
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{description}}</p>
+          <a href=/products/{{_id}}/details class="btn btn-primary">Поръчай</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 card" style="width: 18rem;">
+        <img
+          src={{{img}}}
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{description}}</p>
+          <a href=/products/{{_id}}/details class="btn btn-primary">Поръчай</a>
+        </div>
+      </div>
+
       {{/each}}
     </div>
   </div>
