@@ -27,13 +27,6 @@ const clothingScheme = new mongoose.Schema({
     },
     ownerId: {
         type: mongoose.Types.ObjectId, ref: 'User'
-    },
-    likedBy: [{
-        type: mongoose.Types.ObjectId, ref: 'User',
-    }],
-    type: {
-        type: String,
-        enum: ['t-shirt','shoes','hat','shirt']
     }
 })
 
