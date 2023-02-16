@@ -23,7 +23,11 @@ router.get("/products/create",(req,res)=>{
 router.post("/products/create",async(req,res)=>{
     const obj = req.body;
     res.send(obj)
-    const data = await create(obj.name, obj.description, obj.img, obj.select, res.locals.user._id)
+    try{
+        const data = await create(obj.name, obj.description, obj.img, obj.select, res.locals.user._id)
+    }catch{
+        res.redirect("/403")
+    }
     res.redirect("/products")
 })
 
