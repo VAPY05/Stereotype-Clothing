@@ -1,48 +1,80 @@
 <!-- Page Content -->
 <div class="container details">
 
-    <!-- Portfolio Item Heading -->
-    <h1 class="my-4">{{item.name}}
-    </h1>
-  
-    <!-- Portfolio Item Row -->
-    <div class="row">
-  
-      <div class="col-md-8">
-        <img class="img-fluid item-img" src={{item.img}} alt="">
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{item.name}}
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid item-img" src={{item.img}} alt="">
+    </div>
+
+
+
+    <div class="col-md-4">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <h3 class="my-3">Описание </h3>
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>{{item.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              <h3 class="my-3">Направи Поръчка </h3>
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <form>
+                <div class="item">
+                  <label for="name" name="name">Име</label>
+                  <input placeholder="" id="name" value="" type="text">
+                </div>
+
+                <div class="item">
+                  <label for="lastname" name="email">Фамилия</label>
+                  <input placeholder="" id="lastname" type="text">
+                </div>
+
+                <div class="item">
+                  <label for="email" name="email">Имейл</label>
+                  <input placeholder="" id="email" type="text">
+                </div>
+
+                <div class="item">
+                  <label for="phone" name="email">Телефон</label>
+                  <input placeholder="" id="phone" type="text">
+                </div>
+
+
+                <div class="item">
+                  <button type="submit" class="btn btn-primary mb-3" id="button-mid">Поръчай</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-  
-      <div class="col-md-4">
-        <h3 class="my-3">Описание</h3>
-        <p>{{item.description}}</p>
-        <h3 class="my-3">Направи Поръчка</h3>
 
-        <form>
-          <div class="item">
-            <label for="name" name="name">Име</label>
-            <input placeholder="" id="name" value="">
-          </div>
-
-          <div class="item">
-            <label for="email" name="email">Фамилия</label>
-            <input placeholder="" id="lastname">
-          </div>
-
-          <div class="item">
-            <label for="email" name="email">Телефон</label>
-            <input placeholder="" id="phone">
-          </div>
-          
-          <div class="item">
-          <button type="submit" class="btn btn-primary mb-3" id="button-mid">Поръчай</button>
-          </div>
-
-        </form>
-      </div>
-  
     </div>
     <!-- /.row -->
-  
+
     <!-- Related Projects Row -->
   </div>
   <!-- /.container -->
@@ -52,23 +84,30 @@
     const name = document.getElementById("name")
     const last = document.getElementById("lastname")
     const phone = document.getElementById("phone")
+    const email = document.getElementById("email")
 
     const btnSumbit = document.getElementById("button-mid")
 
-      console.log(last.value.length)
-      console.log(phone.value.length)
+    console.log(last.value.length)
+    console.log(phone.value.length)
 
-      btnSumbit.addEventListener("click",(e)=>{
-        if(name.value.length <= 0){
-          e.preventDefault()
-        }
+    btnSumbit.addEventListener("click", (e) => {
+      if (name.value.length <= 0) {
+        e.preventDefault()
+      }
 
-        if(last.value.length <= 0){
-          e.preventDefault()
-        }
+      if (last.value.length <= 0) {
+        e.preventDefault()
+      }
 
-        if(phone.value.length <= 0){
-          e.preventDefault()
-        }
-      })
+      if (phone.value.length <= 0) {
+        e.preventDefault()
+      }
+
+      if (email.value.length <= 0) {
+        e.preventDefault()
+      }
+
+
+    })
   </script>

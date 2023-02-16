@@ -359,3 +359,7 @@ select{
 .item:last-child{
   margin-top: 20px;
 }
+
+.item-img{
+  margin-bottom: 50px;
+}
