@@ -13,13 +13,31 @@
       </div>
   
       <div class="col-md-4">
-        <h3 class="my-3">Description</h3>
+        <h3 class="my-3">Описание</h3>
         <p>{{item.description}}</p>
-        <h3 class="my-3">Product Actions</h3>
-        <ul class="actions">
-          <li><button class="btn btn-warning">Edit</button></li>
-          <li><button class="btn btn-danger">Delete</button></li>
-        </ul>
+        <h3 class="my-3">Направи Поръчка</h3>
+
+        <form>
+          <div class="item">
+            <label for="name" name="name">Име</label>
+            <input placeholder="" id="name" value="">
+          </div>
+
+          <div class="item">
+            <label for="email" name="email">Фамилия</label>
+            <input placeholder="" id="lastname">
+          </div>
+
+          <div class="item">
+            <label for="email" name="email">Телефон</label>
+            <input placeholder="" id="phone">
+          </div>
+          
+          <div class="item">
+          <button type="submit" class="btn btn-primary mb-3" id="button-mid">Поръчай</button>
+          </div>
+
+        </form>
       </div>
   
     </div>
@@ -28,3 +46,29 @@
     <!-- Related Projects Row -->
   </div>
   <!-- /.container -->
+
+
+  <script defer>
+    const name = document.getElementById("name")
+    const last = document.getElementById("lastname")
+    const phone = document.getElementById("phone")
+
+    const btnSumbit = document.getElementById("button-mid")
+
+      console.log(last.value.length)
+      console.log(phone.value.length)
+
+      btnSumbit.addEventListener("click",(e)=>{
+        if(name.value.length <= 0){
+          e.preventDefault()
+        }
+
+        if(last.value.length <= 0){
+          e.preventDefault()
+        }
+
+        if(phone.value.length <= 0){
+          e.preventDefault()
+        }
+      })
+  </script>

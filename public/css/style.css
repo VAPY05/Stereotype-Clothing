@@ -349,3 +349,13 @@ select{
 .new-line a button{
   width: 100%;
 }
+
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item:last-child{
+  margin-top: 20px;
+}
