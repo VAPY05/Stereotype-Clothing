@@ -77,6 +77,15 @@
                   <input placeholder="" id="phone" type="text">
                 </div>
 
+                <div class="item">
+                  <label for="childrenName" name="childrenName">Име на детето</label>
+                  <input placeholder="" id="childrenName" value="" type="text">
+                </div>
+
+                <div class="item">
+                  <label for="exampleFormControlSelect1">Текст за видео поздрава</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
 
                 <div class="item">
                   <button type="submit" class="btn btn-primary mb-3" id="button-mid">Поръчай</button>
@@ -105,9 +114,6 @@
     const email = document.getElementById("email")
 
     const btnSumbit = document.getElementById("button-mid")
-
-    console.log(last.value.length)
-    console.log(phone.value.length)
 
     btnSumbit.addEventListener("click", (e) => {
       if (name.value.length <= 0) {
